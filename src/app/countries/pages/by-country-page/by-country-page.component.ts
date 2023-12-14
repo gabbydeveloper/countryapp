@@ -9,6 +9,7 @@ import { CountriesService } from '../../services/countries.service';
 export class ByCountryPageComponent {
 
   public countries: Country[] = [];
+  public isLoading: boolean = false;
 
   public placeholderTake: string = 'Busca por país';
 
@@ -16,9 +17,13 @@ export class ByCountryPageComponent {
 
 
   searchByName(term: string) {
+
+    this.isLoading = true;
+
     this.countriesServices.searchCountry('name',term)
       .subscribe(countries => {
         this.countries = countries;
+        this.isLoading = false;
       });
   }
 

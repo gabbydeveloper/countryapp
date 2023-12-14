@@ -8,6 +8,7 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByRegionPageComponent {
   public countries: Country[] = [];
+  public isLoading: boolean = false;
 
   public placeholderTake: string = 'Busca por región';
 
@@ -15,9 +16,13 @@ export class ByRegionPageComponent {
 
 
   searchByRegion(term: string) {
+
+    this.isLoading = true;
+
     this.countriesServices.searchCountry('region',term)
       .subscribe(countries => {
         this.countries = countries;
+        this.isLoading = false;
       });
   }
 }

@@ -9,6 +9,7 @@ import { Country } from '../../interfaces/country';
 export class ByCapitalPageComponent {
 
   public countries: Country[] = [];
+  public isLoading: boolean = false;
 
   public placeholderTake: string = 'Busca por capital';
 
@@ -16,9 +17,13 @@ export class ByCapitalPageComponent {
 
 
   searchByCapital(term: string) {
+
+    this.isLoading = true;
+
     this.countriesServices.searchCountry('capital',term)
       .subscribe(countries => {
         this.countries = countries;
+        this.isLoading = false;
       });
   }
 }
