@@ -1,0 +1,20 @@
+<div class="pt-1">
+  <h2>Búsqueda por Capital</h2>
+  <hr>
+
+  <div class="row">
+    <div class="col">
+      <!-- SearchBox -->
+      <shared-search-box
+       (onValue)="searchByCapital($event)"
+       [placeholderTxt]="placeholderTake"></shared-search-box>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <hr>
+      <countries-table [countries]="countries"></countries-table>
+    </div>
+  </div>
+</div>
