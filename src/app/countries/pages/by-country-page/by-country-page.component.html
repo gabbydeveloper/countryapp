@@ -8,6 +8,7 @@
       <!-- (onValue)="searchByName($event)" -->
       <shared-search-box
       (onDebounce)="searchByName($event)"
+      [initialValue] = "initialValue"
        [placeholderTxt]="placeholderTake"></shared-search-box>
     </div>
   </div>

@@ -1,12 +1,14 @@
-<div class="row mt-4">
+<div class="container-fluid">
+  <div class="row flex-nowrap">
 
-  <div class="col-3">
-    <shared-sidebar></shared-sidebar>
+    <div class="col-3">
+      <shared-sidebar></shared-sidebar>
+    </div>
+
+    <div class="col">
+      <!-- Nuestras páginas -->
+      <router-outlet></router-outlet>
+    </div>
+
   </div>
-
-  <div class="col">
-    <!-- Nuestras páginas -->
-    <router-outlet></router-outlet>
-  </div>
-
 </div>
